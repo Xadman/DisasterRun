@@ -1,30 +1,27 @@
 // © 2021 EasyRoads3D
-// A typical dirt track shader supporting fade in / out at the start / end. The face distance can be set in the Inspector for the first / last marker  
-// Standard 3D Project Usage: Set Material Render Queue to AlphaTest 2450 
+// This shader is used in Edit Mode on the surfaces surrounding the roads controlable from: General Settings > Scene Settings > Hide White Surfaces
 
-Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
+Shader "EasyRoads3D/ER Edit Mode Surface"
 {
 	Properties
 	{
-		[Space]
-		[Header(Road)]
-		[Space]
-		_MainTex("Albedo", 2D) = "white" {}
+		[HideInInspector] _AlphaCutoff("Alpha Cutoff ", Range(0, 1)) = 0.5
+		[HideInInspector] _EmissionColor("Emission Color", Color) = (1,1,1,1)
+
+
 		_Color("Color", Color) = (1,1,1,1)
-		_Metallic("Metallic (R) AO (G) Smoothness (A)", 2D) = "gray" {}
-		_MainMetallicPower1("Metallic Power", Range( 0 , 2)) = 0
-		_MainSmoothnessPower1("Smoothness Power", Range( 0 , 2)) = 1
-		_OcclusionStrength1("Ambient Occlusion Power", Range( 0 , 2)) = 1
-		_BumpMap("Normal Map", 2D) = "bump" {}
-		_BumpScale("Normal Map Scale", Range( 0 , 4)) = 1
+		[Space]
+		[Space]
+		[Header(Active State)]
+		[Space]
+		[Toggle]_Show("Show Surfaces", Range( 0 , 1)) = 1
 		[Space]
 		[Space]
 		[Header(Terrain Z Fighting Offset)]
 		[Space]
 		_OffsetFactor ("Offset Factor", Range(-10.0, 0.0)) = -1
         _OffsetUnit ("Offset Unit", Range(-10.0, 0.0)) = -1
-		[Space]
-		[HideInInspector] _texcoord( "", 2D ) = "white" {}
+
 
 		//_TransmissionShadow( "Transmission Shadow", Range( 0, 1 ) ) = 0.5
 		//_TransStrength( "Trans Strength", Range( 0, 50 ) ) = 1
@@ -176,7 +173,6 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 			#pragma multi_compile _ LOD_FADE_CROSSFADE
 			#pragma multi_compile_fog
 			#define ASE_FOG 1
-			#define _NORMALMAP 1
 			#define ASE_SRP_VERSION 80301
 
 			#pragma prefer_hlslcc gles
@@ -220,7 +216,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 				float4 ase_tangent : TANGENT;
 				float4 texcoord1 : TEXCOORD1;
 				float4 texcoord : TEXCOORD0;
-				float4 ase_color : COLOR;
+				
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
@@ -238,20 +234,14 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 				#if defined(ASE_NEEDS_FRAG_SCREEN_POSITION)
 				float4 screenPos : TEXCOORD6;
 				#endif
-				float4 ase_texcoord7 : TEXCOORD7;
-				float4 ase_color : COLOR;
+				
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 				UNITY_VERTEX_OUTPUT_STEREO
 			};
 
 			CBUFFER_START(UnityPerMaterial)
-			float4 _MainTex_ST;
 			float4 _Color;
-			float4 _Metallic_ST;
-			half _BumpScale;
-			half _MainMetallicPower1;
-			half _MainSmoothnessPower1;
-			half _OcclusionStrength1;
+			float _Show;
 			#ifdef _TRANSMISSION_ASE
 				float _TransmissionShadow;
 			#endif
@@ -272,10 +262,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 				float _TessMaxDisp;
 			#endif
 			CBUFFER_END
-			sampler2D _MainTex;
-			sampler2D _BumpMap;
-			sampler2D _Metallic;
-
+			
 
 			
 			VertexOutput VertexFunction( VertexInput v  )
@@ -285,11 +272,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
 
-				o.ase_texcoord7.xy = v.texcoord.xy;
-				o.ase_color = v.ase_color;
 				
-				//setting value to unused interpolator channels and avoid initialization warnings
-				o.ase_texcoord7.zw = 0;
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					float3 defaultVertexValue = v.vertex.xyz;
 				#else
@@ -351,8 +334,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 				float4 ase_tangent : TANGENT;
 				float4 texcoord : TEXCOORD0;
 				float4 texcoord1 : TEXCOORD1;
-				float4 ase_color : COLOR;
-
+				
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
@@ -372,7 +354,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 				o.ase_tangent = v.ase_tangent;
 				o.texcoord = v.texcoord;
 				o.texcoord1 = v.texcoord1;
-				o.ase_color = v.ase_color;
+				
 				return o;
 			}
 
@@ -414,7 +396,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 				o.ase_tangent = patch[0].ase_tangent * bary.x + patch[1].ase_tangent * bary.y + patch[2].ase_tangent * bary.z;
 				o.texcoord = patch[0].texcoord * bary.x + patch[1].texcoord * bary.y + patch[2].texcoord * bary.z;
 				o.texcoord1 = patch[0].texcoord1 * bary.x + patch[1].texcoord1 * bary.y + patch[2].texcoord1 * bary.z;
-				o.ase_color = patch[0].ase_color * bary.x + patch[1].ase_color * bary.y + patch[2].ase_color * bary.z;
+				
 				#if defined(ASE_PHONG_TESSELLATION)
 				float3 pp[3];
 				for (int i = 0; i < 3; ++i)
@@ -476,24 +458,15 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 	
 				WorldViewDirection = SafeNormalize( WorldViewDirection );
 
-				float2 uv_MainTex = IN.ase_texcoord7.xy * _MainTex_ST.xy + _MainTex_ST.zw;
-				float4 tex2DNode1 = tex2D( _MainTex, uv_MainTex );
 				
-				float2 texCoord23 = IN.ase_texcoord7.xy * float2( 1,1 ) + float2( 0,0 );
-				float3 unpack5 = UnpackNormalScale( tex2D( _BumpMap, texCoord23 ), _BumpScale );
-				unpack5.z = lerp( 1, unpack5.z, saturate(_BumpScale) );
-				
-				float2 uv_Metallic = IN.ase_texcoord7.xy * _Metallic_ST.xy + _Metallic_ST.zw;
-				float4 tex2DNode2 = tex2D( _Metallic, uv_Metallic );
-				
-				float3 Albedo = ( tex2DNode1 * _Color ).rgb;
-				float3 Normal = unpack5;
+				float3 Albedo = _Color.rgb;
+				float3 Normal = float3(0, 0, 1);
 				float3 Emission = 0;
 				float3 Specular = 0.5;
-				float Metallic = ( tex2DNode2.r * _MainMetallicPower1 );
-				float Smoothness = ( tex2DNode2.a * _MainSmoothnessPower1 );
-				float Occlusion = ( tex2DNode2.g * _OcclusionStrength1 );
-				float Alpha = ( ( tex2DNode1.a * _Color.a ) * IN.ase_color.a );
+				float Metallic = 0;
+				float Smoothness = 0.5;
+				float Occlusion = 1;
+				float Alpha = ( _Color.a * _Show );
 				float AlphaClipThreshold = 0.5;
 				float AlphaClipThresholdShadow = 0.5;
 				float3 BakedGI = 0;
@@ -660,7 +633,6 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 			#pragma multi_compile _ LOD_FADE_CROSSFADE
 			#pragma multi_compile_fog
 			#define ASE_FOG 1
-			#define _NORMALMAP 1
 			#define ASE_SRP_VERSION 80301
 
 			#pragma prefer_hlslcc gles
@@ -682,8 +654,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 			{
 				float4 vertex : POSITION;
 				float3 ase_normal : NORMAL;
-				float4 ase_texcoord : TEXCOORD0;
-				float4 ase_color : COLOR;
+				
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
@@ -696,20 +667,14 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 				#if defined(REQUIRES_VERTEX_SHADOW_COORD_INTERPOLATOR) && defined(ASE_NEEDS_FRAG_SHADOWCOORDS)
 				float4 shadowCoord : TEXCOORD1;
 				#endif
-				float4 ase_texcoord2 : TEXCOORD2;
-				float4 ase_color : COLOR;
+				
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 				UNITY_VERTEX_OUTPUT_STEREO
 			};
 
 			CBUFFER_START(UnityPerMaterial)
-			float4 _MainTex_ST;
 			float4 _Color;
-			float4 _Metallic_ST;
-			half _BumpScale;
-			half _MainMetallicPower1;
-			half _MainSmoothnessPower1;
-			half _OcclusionStrength1;
+			float _Show;
 			#ifdef _TRANSMISSION_ASE
 				float _TransmissionShadow;
 			#endif
@@ -730,8 +695,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 				float _TessMaxDisp;
 			#endif
 			CBUFFER_END
-			sampler2D _MainTex;
-
+			
 
 			
 			float3 _LightDirection;
@@ -743,11 +707,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO( o );
 
-				o.ase_texcoord2.xy = v.ase_texcoord.xy;
-				o.ase_color = v.ase_color;
 				
-				//setting value to unused interpolator channels and avoid initialization warnings
-				o.ase_texcoord2.zw = 0;
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					float3 defaultVertexValue = v.vertex.xyz;
 				#else
@@ -790,9 +750,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 			{
 				float4 vertex : INTERNALTESSPOS;
 				float3 ase_normal : NORMAL;
-				float4 ase_texcoord : TEXCOORD0;
-				float4 ase_color : COLOR;
-
+				
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
@@ -809,8 +767,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 				o.vertex = v.vertex;
 				o.ase_normal = v.ase_normal;
-				o.ase_texcoord = v.ase_texcoord;
-				o.ase_color = v.ase_color;
+				
 				return o;
 			}
 
@@ -849,8 +806,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 				VertexInput o = (VertexInput) 0;
 				o.vertex = patch[0].vertex * bary.x + patch[1].vertex * bary.y + patch[2].vertex * bary.z;
 				o.ase_normal = patch[0].ase_normal * bary.x + patch[1].ase_normal * bary.y + patch[2].ase_normal * bary.z;
-				o.ase_texcoord = patch[0].ase_texcoord * bary.x + patch[1].ase_texcoord * bary.y + patch[2].ase_texcoord * bary.z;
-				o.ase_color = patch[0].ase_color * bary.x + patch[1].ase_color * bary.y + patch[2].ase_color * bary.z;
+				
 				#if defined(ASE_PHONG_TESSELLATION)
 				float3 pp[3];
 				for (int i = 0; i < 3; ++i)
@@ -896,10 +852,8 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 					#endif
 				#endif
 
-				float2 uv_MainTex = IN.ase_texcoord2.xy * _MainTex_ST.xy + _MainTex_ST.zw;
-				float4 tex2DNode1 = tex2D( _MainTex, uv_MainTex );
 				
-				float Alpha = ( ( tex2DNode1.a * _Color.a ) * IN.ase_color.a );
+				float Alpha = ( _Color.a * _Show );
 				float AlphaClipThreshold = 0.5;
 				float AlphaClipThresholdShadow = 0.5;
 				#ifdef ASE_DEPTH_WRITE_ON
@@ -943,7 +897,6 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 			#pragma multi_compile _ LOD_FADE_CROSSFADE
 			#pragma multi_compile_fog
 			#define ASE_FOG 1
-			#define _NORMALMAP 1
 			#define ASE_SRP_VERSION 80301
 
 			#pragma prefer_hlslcc gles
@@ -965,8 +918,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 			{
 				float4 vertex : POSITION;
 				float3 ase_normal : NORMAL;
-				float4 ase_texcoord : TEXCOORD0;
-				float4 ase_color : COLOR;
+				
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
@@ -979,20 +931,14 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 				#if defined(REQUIRES_VERTEX_SHADOW_COORD_INTERPOLATOR) && defined(ASE_NEEDS_FRAG_SHADOWCOORDS)
 				float4 shadowCoord : TEXCOORD1;
 				#endif
-				float4 ase_texcoord2 : TEXCOORD2;
-				float4 ase_color : COLOR;
+				
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 				UNITY_VERTEX_OUTPUT_STEREO
 			};
 
 			CBUFFER_START(UnityPerMaterial)
-			float4 _MainTex_ST;
 			float4 _Color;
-			float4 _Metallic_ST;
-			half _BumpScale;
-			half _MainMetallicPower1;
-			half _MainSmoothnessPower1;
-			half _OcclusionStrength1;
+			float _Show;
 			#ifdef _TRANSMISSION_ASE
 				float _TransmissionShadow;
 			#endif
@@ -1013,8 +959,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 				float _TessMaxDisp;
 			#endif
 			CBUFFER_END
-			sampler2D _MainTex;
-
+			
 
 			
 			VertexOutput VertexFunction( VertexInput v  )
@@ -1024,11 +969,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
 
-				o.ase_texcoord2.xy = v.ase_texcoord.xy;
-				o.ase_color = v.ase_color;
 				
-				//setting value to unused interpolator channels and avoid initialization warnings
-				o.ase_texcoord2.zw = 0;
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					float3 defaultVertexValue = v.vertex.xyz;
 				#else
@@ -1064,9 +1005,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 			{
 				float4 vertex : INTERNALTESSPOS;
 				float3 ase_normal : NORMAL;
-				float4 ase_texcoord : TEXCOORD0;
-				float4 ase_color : COLOR;
-
+				
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
@@ -1083,8 +1022,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 				o.vertex = v.vertex;
 				o.ase_normal = v.ase_normal;
-				o.ase_texcoord = v.ase_texcoord;
-				o.ase_color = v.ase_color;
+				
 				return o;
 			}
 
@@ -1123,8 +1061,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 				VertexInput o = (VertexInput) 0;
 				o.vertex = patch[0].vertex * bary.x + patch[1].vertex * bary.y + patch[2].vertex * bary.z;
 				o.ase_normal = patch[0].ase_normal * bary.x + patch[1].ase_normal * bary.y + patch[2].ase_normal * bary.z;
-				o.ase_texcoord = patch[0].ase_texcoord * bary.x + patch[1].ase_texcoord * bary.y + patch[2].ase_texcoord * bary.z;
-				o.ase_color = patch[0].ase_color * bary.x + patch[1].ase_color * bary.y + patch[2].ase_color * bary.z;
+				
 				#if defined(ASE_PHONG_TESSELLATION)
 				float3 pp[3];
 				for (int i = 0; i < 3; ++i)
@@ -1169,10 +1106,8 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 					#endif
 				#endif
 
-				float2 uv_MainTex = IN.ase_texcoord2.xy * _MainTex_ST.xy + _MainTex_ST.zw;
-				float4 tex2DNode1 = tex2D( _MainTex, uv_MainTex );
 				
-				float Alpha = ( ( tex2DNode1.a * _Color.a ) * IN.ase_color.a );
+				float Alpha = ( _Color.a * _Show );
 				float AlphaClipThreshold = 0.5;
 				#ifdef ASE_DEPTH_WRITE_ON
 				float DepthValue = 0;
@@ -1208,7 +1143,6 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 			#pragma multi_compile _ LOD_FADE_CROSSFADE
 			#pragma multi_compile_fog
 			#define ASE_FOG 1
-			#define _NORMALMAP 1
 			#define ASE_SRP_VERSION 80301
 
 			#pragma prefer_hlslcc gles
@@ -1234,8 +1168,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 				float3 ase_normal : NORMAL;
 				float4 texcoord1 : TEXCOORD1;
 				float4 texcoord2 : TEXCOORD2;
-				float4 ase_texcoord : TEXCOORD0;
-				float4 ase_color : COLOR;
+				
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
@@ -1248,20 +1181,14 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 				#if defined(REQUIRES_VERTEX_SHADOW_COORD_INTERPOLATOR) && defined(ASE_NEEDS_FRAG_SHADOWCOORDS)
 				float4 shadowCoord : TEXCOORD1;
 				#endif
-				float4 ase_texcoord2 : TEXCOORD2;
-				float4 ase_color : COLOR;
+				
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 				UNITY_VERTEX_OUTPUT_STEREO
 			};
 
 			CBUFFER_START(UnityPerMaterial)
-			float4 _MainTex_ST;
 			float4 _Color;
-			float4 _Metallic_ST;
-			half _BumpScale;
-			half _MainMetallicPower1;
-			half _MainSmoothnessPower1;
-			half _OcclusionStrength1;
+			float _Show;
 			#ifdef _TRANSMISSION_ASE
 				float _TransmissionShadow;
 			#endif
@@ -1282,8 +1209,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 				float _TessMaxDisp;
 			#endif
 			CBUFFER_END
-			sampler2D _MainTex;
-
+			
 
 			
 			VertexOutput VertexFunction( VertexInput v  )
@@ -1293,11 +1219,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
 
-				o.ase_texcoord2.xy = v.ase_texcoord.xy;
-				o.ase_color = v.ase_color;
 				
-				//setting value to unused interpolator channels and avoid initialization warnings
-				o.ase_texcoord2.zw = 0;
 				
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					float3 defaultVertexValue = v.vertex.xyz;
@@ -1335,9 +1257,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 				float3 ase_normal : NORMAL;
 				float4 texcoord1 : TEXCOORD1;
 				float4 texcoord2 : TEXCOORD2;
-				float4 ase_texcoord : TEXCOORD0;
-				float4 ase_color : COLOR;
-
+				
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
@@ -1356,8 +1276,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 				o.ase_normal = v.ase_normal;
 				o.texcoord1 = v.texcoord1;
 				o.texcoord2 = v.texcoord2;
-				o.ase_texcoord = v.ase_texcoord;
-				o.ase_color = v.ase_color;
+				
 				return o;
 			}
 
@@ -1398,8 +1317,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 				o.ase_normal = patch[0].ase_normal * bary.x + patch[1].ase_normal * bary.y + patch[2].ase_normal * bary.z;
 				o.texcoord1 = patch[0].texcoord1 * bary.x + patch[1].texcoord1 * bary.y + patch[2].texcoord1 * bary.z;
 				o.texcoord2 = patch[0].texcoord2 * bary.x + patch[1].texcoord2 * bary.y + patch[2].texcoord2 * bary.z;
-				o.ase_texcoord = patch[0].ase_texcoord * bary.x + patch[1].ase_texcoord * bary.y + patch[2].ase_texcoord * bary.z;
-				o.ase_color = patch[0].ase_color * bary.x + patch[1].ase_color * bary.y + patch[2].ase_color * bary.z;
+				
 				#if defined(ASE_PHONG_TESSELLATION)
 				float3 pp[3];
 				for (int i = 0; i < 3; ++i)
@@ -1435,13 +1353,11 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 					#endif
 				#endif
 
-				float2 uv_MainTex = IN.ase_texcoord2.xy * _MainTex_ST.xy + _MainTex_ST.zw;
-				float4 tex2DNode1 = tex2D( _MainTex, uv_MainTex );
 				
 				
-				float3 Albedo = ( tex2DNode1 * _Color ).rgb;
+				float3 Albedo = _Color.rgb;
 				float3 Emission = 0;
-				float Alpha = ( ( tex2DNode1.a * _Color.a ) * IN.ase_color.a );
+				float Alpha = ( _Color.a * _Show );
 				float AlphaClipThreshold = 0.5;
 
 				#ifdef _ALPHATEST_ON
@@ -1476,7 +1392,6 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 			#pragma multi_compile _ LOD_FADE_CROSSFADE
 			#pragma multi_compile_fog
 			#define ASE_FOG 1
-			#define _NORMALMAP 1
 			#define ASE_SRP_VERSION 80301
 
 			#pragma prefer_hlslcc gles
@@ -1501,8 +1416,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 			{
 				float4 vertex : POSITION;
 				float3 ase_normal : NORMAL;
-				float4 ase_texcoord : TEXCOORD0;
-				float4 ase_color : COLOR;
+				
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
@@ -1515,20 +1429,14 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 				#if defined(REQUIRES_VERTEX_SHADOW_COORD_INTERPOLATOR) && defined(ASE_NEEDS_FRAG_SHADOWCOORDS)
 				float4 shadowCoord : TEXCOORD1;
 				#endif
-				float4 ase_texcoord2 : TEXCOORD2;
-				float4 ase_color : COLOR;
+				
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 				UNITY_VERTEX_OUTPUT_STEREO
 			};
 
 			CBUFFER_START(UnityPerMaterial)
-			float4 _MainTex_ST;
 			float4 _Color;
-			float4 _Metallic_ST;
-			half _BumpScale;
-			half _MainMetallicPower1;
-			half _MainSmoothnessPower1;
-			half _OcclusionStrength1;
+			float _Show;
 			#ifdef _TRANSMISSION_ASE
 				float _TransmissionShadow;
 			#endif
@@ -1549,8 +1457,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 				float _TessMaxDisp;
 			#endif
 			CBUFFER_END
-			sampler2D _MainTex;
-
+			
 
 			
 			VertexOutput VertexFunction( VertexInput v  )
@@ -1560,11 +1467,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 				UNITY_TRANSFER_INSTANCE_ID( v, o );
 				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO( o );
 
-				o.ase_texcoord2.xy = v.ase_texcoord.xy;
-				o.ase_color = v.ase_color;
 				
-				//setting value to unused interpolator channels and avoid initialization warnings
-				o.ase_texcoord2.zw = 0;
 				
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					float3 defaultVertexValue = v.vertex.xyz;
@@ -1603,9 +1506,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 			{
 				float4 vertex : INTERNALTESSPOS;
 				float3 ase_normal : NORMAL;
-				float4 ase_texcoord : TEXCOORD0;
-				float4 ase_color : COLOR;
-
+				
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
@@ -1622,8 +1523,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 				o.vertex = v.vertex;
 				o.ase_normal = v.ase_normal;
-				o.ase_texcoord = v.ase_texcoord;
-				o.ase_color = v.ase_color;
+				
 				return o;
 			}
 
@@ -1662,8 +1562,7 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 				VertexInput o = (VertexInput) 0;
 				o.vertex = patch[0].vertex * bary.x + patch[1].vertex * bary.y + patch[2].vertex * bary.z;
 				o.ase_normal = patch[0].ase_normal * bary.x + patch[1].ase_normal * bary.y + patch[2].ase_normal * bary.z;
-				o.ase_texcoord = patch[0].ase_texcoord * bary.x + patch[1].ase_texcoord * bary.y + patch[2].ase_texcoord * bary.z;
-				o.ase_color = patch[0].ase_color * bary.x + patch[1].ase_color * bary.y + patch[2].ase_color * bary.z;
+				
 				#if defined(ASE_PHONG_TESSELLATION)
 				float3 pp[3];
 				for (int i = 0; i < 3; ++i)
@@ -1699,12 +1598,10 @@ Shader "EasyRoads3D/ER Dirt Road Fade In - Out"
 					#endif
 				#endif
 
-				float2 uv_MainTex = IN.ase_texcoord2.xy * _MainTex_ST.xy + _MainTex_ST.zw;
-				float4 tex2DNode1 = tex2D( _MainTex, uv_MainTex );
 				
 				
-				float3 Albedo = ( tex2DNode1 * _Color ).rgb;
-				float Alpha = ( ( tex2DNode1.a * _Color.a ) * IN.ase_color.a );
+				float3 Albedo = _Color.rgb;
+				float Alpha = ( _Color.a * _Show );
 				float AlphaClipThreshold = 0.5;
 
 				half4 color = half4( Albedo, Alpha );
