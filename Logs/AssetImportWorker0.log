@@ -1,0 +1,661 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.11f1 (0a5ca18544bf) revision 679073'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22621) 64bit Core' Language: 'en' Physical Memory: 16165 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/Kevin Nipper/Documents/GitHub/DisasterRun
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+55431
+Successfully changed project path to: C:/Users/Kevin Nipper/Documents/GitHub/DisasterRun
+C:/Users/Kevin Nipper/Documents/GitHub/DisasterRun
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 149.83 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.11f1 (0a5ca18544bf)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Kevin Nipper/Documents/GitHub/DisasterRun/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) UHD Graphics (ID=0x8a56)
+    Vendor:   Intel
+    VRAM:     8082 MB
+    Driver:   30.0.101.2079
+Shader 'Transparent/Cutout/Complete': fallback shader 'Transparent/Cutout/BumpedSpecular' not found
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56236
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
+Registered in 0.012609 seconds.
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 118.85 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.215 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1216ms)
+		BeginReloadAssembly (166ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (836ms)
+			LoadAssemblies (166ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (220ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (46ms)
+			SetupLoadedEditorAssemblies (474ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (103ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (119ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (171ms)
+				ProcessInitializeOnLoadMethodAttributes (78ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.013097 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 118.00 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Package Manager log level set to [2]
+Mono: successfully reloaded assembly
+- Completed reload, in  2.462 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2463ms)
+		BeginReloadAssembly (324ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (12ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (162ms)
+		EndReloadAssembly (1961ms)
+			LoadAssemblies (130ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (381ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (100ms)
+			SetupLoadedEditorAssemblies (1280ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (26ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (118ms)
+				BeforeProcessingInitializeOnLoad (148ms)
+				ProcessInitializeOnLoadAttributes (858ms)
+				ProcessInitializeOnLoadMethodAttributes (118ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'Transparent/Cutout/Complete': fallback shader 'Transparent/Cutout/BumpedSpecular' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 1.15 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4634 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 151 unused Assets / (3.1 MB). Loaded Objects now: 5178.
+Memory consumption went from 221.5 MB to 218.4 MB.
+Total: 6.110700 ms (FindLiveObjects: 0.430300 ms CreateObjectMapping: 0.283800 ms MarkObjects: 4.250300 ms  DeleteObjects: 1.144000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 284481.758292 seconds.
+  path: Assets/NewLayer.terrainlayer
+  artifactKey: Guid(209e9cdf2838ad54cb97c8fa130c966c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NewLayer.terrainlayer using Guid(209e9cdf2838ad54cb97c8fa130c966c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e28acc62c45c58da50cbbf016ec36574') in 0.134670 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Timeline.playable
+  artifactKey: Guid(e81490ade1f79974eaf5ecc8c4af8d73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Timeline.playable using Guid(e81490ade1f79974eaf5ecc8c4af8d73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ee15764f911930a7db354bd966ace97') in 0.027967 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.360650 seconds.
+  path: Assets/EffectExamples/Shared/Models/BackGround.FBX
+  artifactKey: Guid(f4527c479041fc040b53171204c086a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Shared/Models/BackGround.FBX using Guid(f4527c479041fc040b53171204c086a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20d712f788acb48ba0195f7bf615b0cf') in 0.602319 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/MUTT Rear Mudguard_n.fbx
+  artifactKey: Guid(83eab292c59686141acca7f040486b28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/MUTT Rear Mudguard_n.fbx using Guid(83eab292c59686141acca7f040486b28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6dd3ab89d97af3402ac6647fc52f9b54') in 0.488318 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/Front Axle_a.fbx
+  artifactKey: Guid(22a7534b3a717e640be491ea0766a43e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/Front Axle_a.fbx using Guid(22a7534b3a717e640be491ea0766a43e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81c6c65322a685b6b188b9d58f5b1a7e') in 0.146882 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Rocks and Boulders 2/Rocks/Source/Models/Rock1D.fbx
+  artifactKey: Guid(983886d38a2dfa14fa5778c136ecbb9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rocks and Boulders 2/Rocks/Source/Models/Rock1D.fbx using Guid(983886d38a2dfa14fa5778c136ecbb9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28c6c61864e4f1422223b5c48a1481d3') in 0.246445 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Rocks and Boulders 2/Rocks/Source/Models/Rock4B.fbx
+  artifactKey: Guid(553d9789b73b4f44b8326e2e6918d951) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rocks and Boulders 2/Rocks/Source/Models/Rock4B.fbx using Guid(553d9789b73b4f44b8326e2e6918d951) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42c73d0a3979c6a44ee6d8c1288efc04') in 0.050688 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/ArtisticMechanics/Brat/Meshes/Singles/000 Position/MUTT Front Brakes 000_n.fbx
+  artifactKey: Guid(243750417dcf1834f8e51efb233c7b75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ArtisticMechanics/Brat/Meshes/Singles/000 Position/MUTT Front Brakes 000_n.fbx using Guid(243750417dcf1834f8e51efb233c7b75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c21a4130005f687b02da1b60789fc1a') in 0.067526 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000101 seconds.
+  path: Assets/ArtisticMechanics/Brat/Meshes/Singles/000 Position/MUTT Rear Brakes 000_n.fbx
+  artifactKey: Guid(cc9f68da66d29554fb84b61613454a88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ArtisticMechanics/Brat/Meshes/Singles/000 Position/MUTT Rear Brakes 000_n.fbx using Guid(cc9f68da66d29554fb84b61613454a88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '572a9e3a9a6dde5805c4bce9c426b1d5') in 0.059926 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/CLASSIC Front Tyre_n.fbx
+  artifactKey: Guid(a2fe4e10d66cead40b9b8414ecef0c96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/CLASSIC Front Tyre_n.fbx using Guid(a2fe4e10d66cead40b9b8414ecef0c96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab0d2da7508df145b9e9c7af0a2af933') in 0.062935 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/Rear Brake Calliper_a.fbx
+  artifactKey: Guid(d21e5c5cc48d4bf42bbd5f4e660bafb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/Rear Brake Calliper_a.fbx using Guid(d21e5c5cc48d4bf42bbd5f4e660bafb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a8979108083d206fcc20331577f4180') in 0.068114 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000060 seconds.
+  path: Assets/Rocks and Boulders 2/Rocks/Source/Models/Rock6C.fbx
+  artifactKey: Guid(f086abf98764ee6488fbf0e5af919765) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rocks and Boulders 2/Rocks/Source/Models/Rock6C.fbx using Guid(f086abf98764ee6488fbf0e5af919765) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dad21f5ffb033746a850bafa22a17590') in 0.060814 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Rocks and Boulders 2/Rocks/Source/Models/box.fbx
+  artifactKey: Guid(d5085b45bd6efa148b42ea3dc7ba9a0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rocks and Boulders 2/Rocks/Source/Models/box.fbx using Guid(d5085b45bd6efa148b42ea3dc7ba9a0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '348b513215df154969579292504c815b') in 0.061478 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/EffectExamples/Shared/Models/FPSWeapon.fbx
+  artifactKey: Guid(47509307932d1e140a2b4d9024d228e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Shared/Models/FPSWeapon.fbx using Guid(47509307932d1e140a2b4d9024d228e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74560446b35448dca1b0b17f0fd5aae1') in 0.063215 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Rocks and Boulders 2/Rocks/Source/Models/Rock1A.fbx
+  artifactKey: Guid(dfb9706df9ac8264ebf1e58976096256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rocks and Boulders 2/Rocks/Source/Models/Rock1A.fbx using Guid(dfb9706df9ac8264ebf1e58976096256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95b3a19706e62b45b6992dfeb4f6292a') in 0.057607 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/laxer tree pkg/Models/baum hd fbx.fbx
+  artifactKey: Guid(9b27b908e66bddb42940797bc06df908) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/laxer tree pkg/Models/baum hd fbx.fbx using Guid(9b27b908e66bddb42940797bc06df908) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82463dfb3efce6a3ea223725fc6c4683') in 0.277562 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/laxer tree pkg/Models/baum hd med fbx.fbx
+  artifactKey: Guid(8606c21208a6abf4aa86e39e9938598b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/laxer tree pkg/Models/baum hd med fbx.fbx using Guid(8606c21208a6abf4aa86e39e9938598b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00e1344f4b26a93e8f4be36f24c4ca74') in 0.068108 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000080 seconds.
+  path: Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/MUTT Headlights_a.fbx
+  artifactKey: Guid(170a6d16ed6d40141aa4fc7bcd9a2ab3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/MUTT Headlights_a.fbx using Guid(170a6d16ed6d40141aa4fc7bcd9a2ab3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '330cee4788e04c74a2bd648a29031dee') in 0.054793 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/SCRAMBLER Seat_o.fbx
+  artifactKey: Guid(065b6365e9fe8d94cbfe3ca4b880f8ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/SCRAMBLER Seat_o.fbx using Guid(065b6365e9fe8d94cbfe3ca4b880f8ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e74a30e5180a11cf5c875d282810bc9') in 0.057046 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/MUTT Front Mudguard_n.fbx
+  artifactKey: Guid(55dcb64cf5edeec4b8546cabe4a025cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/MUTT Front Mudguard_n.fbx using Guid(55dcb64cf5edeec4b8546cabe4a025cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e9367f4f040c4d7fef18e61c20f2fdd') in 0.058764 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Simple Vehicle Pack/Models/car_1.FBX
+  artifactKey: Guid(75fac0ffc516dac4fb20ed28a0b923fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Simple Vehicle Pack/Models/car_1.FBX using Guid(75fac0ffc516dac4fb20ed28a0b923fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b9f7fcfe721916a26ef3472ad0a2a2c') in 0.143763 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000078 seconds.
+  path: Assets/asset_free_Ukraine_cars/mesh/cars/car/car_6/car_6_black.fbx
+  artifactKey: Guid(50f53926913170b4daab14ab08678678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/asset_free_Ukraine_cars/mesh/cars/car/car_6/car_6_black.fbx using Guid(50f53926913170b4daab14ab08678678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50c1be490d8fcec7227e5a509c661f51') in 0.165368 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000065 seconds.
+  path: Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/MUTT Right Back Suspension_n.fbx
+  artifactKey: Guid(582dd227bc670ed4e9a64601af620a06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/MUTT Right Back Suspension_n.fbx using Guid(582dd227bc670ed4e9a64601af620a06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e23c2ed62a8c25a65ae97d805130778e') in 0.055311 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000080 seconds.
+  path: Assets/Bike/FBX/S_Bike.FBX
+  artifactKey: Guid(7ea5ea61832b6574b955df5b0ece6d75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Bike/FBX/S_Bike.FBX using Guid(7ea5ea61832b6574b955df5b0ece6d75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fee7345f8e075b2ad11a183eae9cbcf') in 0.056424 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Rocks and Boulders 2/Rocks/Source/Models/Rock1B.fbx
+  artifactKey: Guid(976e89866374b704f8eff32373bca69c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rocks and Boulders 2/Rocks/Source/Models/Rock1B.fbx using Guid(976e89866374b704f8eff32373bca69c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90a628542b7d9da5bb66a9ef8fda0cf1') in 0.057383 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000070 seconds.
+  path: Assets/Animation/Ch20_nonPBR@Goalkeeper Idle.fbx
+  artifactKey: Guid(57b6af9c9c5c785438139eb850ee0a9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Ch20_nonPBR@Goalkeeper Idle.fbx using Guid(57b6af9c9c5c785438139eb850ee0a9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd6dbd492d12b1ca7412dcefafe148c5') in 0.468667 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/EffectExamples/WaterEffects/Models/ImpactSplash.FBX
+  artifactKey: Guid(8f8a4cd20bdf7f845ab3768cae8aceed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/WaterEffects/Models/ImpactSplash.FBX using Guid(8f8a4cd20bdf7f845ab3768cae8aceed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1da871082df45d8f044bfa610262d9f7') in 0.046115 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000168 seconds.
+  path: Assets/EffectExamples/WeaponEffects/Models/RocketWarhead.FBX
+  artifactKey: Guid(c25b0e0e92e901144a739246c4539336) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/WeaponEffects/Models/RocketWarhead.FBX using Guid(c25b0e0e92e901144a739246c4539336) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39e69eefb20b050802d7ea871c023186') in 0.053749 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000065 seconds.
+  path: Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/Rear Axle_a.fbx
+  artifactKey: Guid(1f3b000809554da47be20ceceb246c77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/Rear Axle_a.fbx using Guid(1f3b000809554da47be20ceceb246c77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ca12ee074e683ae0896d77dc358688a') in 0.060802 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/MUTT Rear Brakes_n.fbx
+  artifactKey: Guid(f3a20be832c54484e976bc960e16fc73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/MUTT Rear Brakes_n.fbx using Guid(f3a20be832c54484e976bc960e16fc73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '996bf5d542b17e0ecd82cc9376eaeb05') in 0.062140 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000058 seconds.
+  path: Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/MUTT Taillights_o.fbx
+  artifactKey: Guid(a1bf44ea8ecc41142987041109197d65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/MUTT Taillights_o.fbx using Guid(a1bf44ea8ecc41142987041109197d65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7ddcb66b8d7c722eddad390f5a6050d') in 0.062457 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000124 seconds.
+  path: Assets/LowpolyStreetPack/Meshes/Park.FBX
+  artifactKey: Guid(63c115d4cb97ebb429c815dffc7a05d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/LowpolyStreetPack/Meshes/Park.FBX using Guid(63c115d4cb97ebb429c815dffc7a05d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3f83b30973d1919c2529a68ed36808d') in 0.248364 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/asset_free_Ukraine_cars/mesh/cars/bus/bus_1/bus_1_yellow.fbx
+  artifactKey: Guid(80ec9d4b1fe521f4d92830bd743a27d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/asset_free_Ukraine_cars/mesh/cars/bus/bus_1/bus_1_yellow.fbx using Guid(80ec9d4b1fe521f4d92830bd743a27d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9013f50de1886e3f4373e47a8fc4941c') in 0.159464 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/Animation/Ch20_nonPBR.fbx
+  artifactKey: Guid(0b0473c12cfeb2f468b2795182f16829) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Ch20_nonPBR.fbx using Guid(0b0473c12cfeb2f468b2795182f16829) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b20bef45c2372a21b11b25aed57ad12') in 0.118017 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/LowpolyStreetPack/Meshes/LightShape.FBX
+  artifactKey: Guid(d5ff1f5c1c85a3b4b97e383bb087d486) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/LowpolyStreetPack/Meshes/LightShape.FBX using Guid(d5ff1f5c1c85a3b4b97e383bb087d486) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc2b2126d395e29a8eecf76ffc71299f') in 0.054584 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Rocks and Boulders 2/Rocks/Source/Models/Rock2.fbx
+  artifactKey: Guid(d11d8096e6b14aa43aa74d862d2d01f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rocks and Boulders 2/Rocks/Source/Models/Rock2.fbx using Guid(d11d8096e6b14aa43aa74d862d2d01f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78f87c59c0d823dda6c7eb79b120b81d') in 0.047656 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/asset_free_Ukraine_cars/mesh/cars/car/car_5/car_5_blue.fbx
+  artifactKey: Guid(c609758a60f3baa48b0710a1fa89c048) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/asset_free_Ukraine_cars/mesh/cars/car/car_5/car_5_blue.fbx using Guid(c609758a60f3baa48b0710a1fa89c048) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a7a1067cc5fb98b69994cc0bf1dca43') in 0.173525 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/LowpolyStreetPack/Meshes/Foliage.FBX
+  artifactKey: Guid(e83dabdd8814e2243a3581266264de31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/LowpolyStreetPack/Meshes/Foliage.FBX using Guid(e83dabdd8814e2243a3581266264de31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12aacd79101014fb8e5806216ba48c96') in 0.333320 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000091 seconds.
+  path: Assets/LowpolyStreetPack/Meshes/Fences.FBX
+  artifactKey: Guid(4b29ecf28e5fd4b4f86a961aca54fd1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/LowpolyStreetPack/Meshes/Fences.FBX using Guid(4b29ecf28e5fd4b4f86a961aca54fd1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1653f9ef832cb6a33a188043ebcfbcf2') in 0.498723 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000089 seconds.
+  path: Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/MUTT Front Brakes_n.fbx
+  artifactKey: Guid(6685d093d8a35c942ab92072eaf0e883) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/MUTT Front Brakes_n.fbx using Guid(6685d093d8a35c942ab92072eaf0e883) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba90c8aae71ae41ecf9e88f81dad3ae1') in 0.052773 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Simple Vehicle Pack/Models/bus.FBX
+  artifactKey: Guid(7f4f24cb528cb884a874e5266f87c831) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Simple Vehicle Pack/Models/bus.FBX using Guid(7f4f24cb528cb884a874e5266f87c831) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b757a5637f05a41736e3a3b7716918f1') in 0.147104 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/Rocks and Boulders 2/Rocks/Source/Models/Rock6A.fbx
+  artifactKey: Guid(cffd35361a9ea044e8715024748615d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rocks and Boulders 2/Rocks/Source/Models/Rock6A.fbx using Guid(cffd35361a9ea044e8715024748615d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75871709a472da2635a36a03a20dac91') in 0.048793 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/BOBBER Front Rim_o.fbx
+  artifactKey: Guid(e76a7cb8d774a3741bdefc3828be3b2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/BOBBER Front Rim_o.fbx using Guid(e76a7cb8d774a3741bdefc3828be3b2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd6282c07bdc1cc53257a6bb8594dca7') in 0.069711 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/ArtisticMechanics/Brat/Meshes/Singles/000 Position/CLASSIC Front Tyre 000_n.fbx
+  artifactKey: Guid(3b5549c538f5d3c46b3469be8573a374) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ArtisticMechanics/Brat/Meshes/Singles/000 Position/CLASSIC Front Tyre 000_n.fbx using Guid(3b5549c538f5d3c46b3469be8573a374) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f72593fd4760f32fc9a706c8c30185af') in 0.056920 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/ArtisticMechanics/Brat/Meshes/Singles/000 Position/CLASSIC Rear Tyre 000_n.fbx
+  artifactKey: Guid(1bfa5dca39ceec64684d6b9c36e02b42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ArtisticMechanics/Brat/Meshes/Singles/000 Position/CLASSIC Rear Tyre 000_n.fbx using Guid(1bfa5dca39ceec64684d6b9c36e02b42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3cf493d21bf2744c1d075e591e39993') in 0.060947 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 244.689967 seconds.
+  path: Assets/AssetStoreOriginals/_SNAPS_PrototypingAssets/About/Icons/New Custom Render Texture.asset
+  artifactKey: Guid(63742ddae214ca444b2d25bdafc1c75b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/AssetStoreOriginals/_SNAPS_PrototypingAssets/About/Icons/New Custom Render Texture.asset using Guid(63742ddae214ca444b2d25bdafc1c75b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '2b0f49cee206d3933600ffcf0e21e89d') in 0.158538 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/StreamingAssets/UnityServicesProjectConfiguration.json
+  artifactKey: Guid(eea3940be8aa0744989887903962ca31) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/StreamingAssets/UnityServicesProjectConfiguration.json using Guid(eea3940be8aa0744989887903962ca31) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '00000000000000000000000000000000') in 1.123485 seconds  code(4) message(Build asset version error: assets/streamingassets/unityservicesprojectconfiguration.json in SourceAssetDB has modification time of '2023-02-18T11:28:46.5601349Z' while content on disk has modification time of '0001-01-01T00:00:00Z' with error code 2
+Stacktrace:
+0x00007ff680df368d (Unity) StackWalker::GetCurrentCallstack
+0x00007ff680dfa369 (Unity) StackWalker::ShowCallstack
+0x00007ff681d6b683 (Unity) GetStacktrace
+0x00007ff6821094d4 (Unity) GetAssetHashAndValidate
+0x00007ff682104a38 (Unity) AssetVersionBuilder::BuildHashOfSourceAssetArray
+0x00007ff682102a0d (Unity) AssetVersionBuilder::BuildAssetVersion
+0x00007ff68208a01a (Unity) CreateAssetVersionBuilder
+0x00007ff682090b13 (Unity) ImportToObjects
+0x00007ff68208f843 (Unity) ImportAsset
+0x00007ff6820b2282 (Unity) AssetImportWorker::Import
+0x00007ff682118514 (Unity) <lambda_4be6cb94f9e73352d2f8569f1da7d533>::operator()
+0x00007ff682159c82 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)>,asio::io_context::basic_executor_type<std::allocator<void>,0> >::do_complete
+0x00007ff682145b6e (Unity) asio::detail::win_iocp_io_context::do_one
+0x00007ff6821477d4 (Unity) asio::detail::win_iocp_io_context::run
+0x00007ff68215806e (Unity) IOService::Run
+0x00007ff68212ac7f (Unity) AssetImportWorkerClient::Run
+0x00007ff6820f4db3 (Unity) RunAssetImportWorkerClientV2
+0x00007ff6820f4e3b (Unity) RunAssetImporterV2
+0x00007ff681916158 (Unity) Application::InitializeProject
+0x00007ff681d75dc8 (Unity) WinMain
+0x00007ff68311533e (Unity) __scrt_common_main_seh
+0x00007ffdf6a626bd (KERNEL32) BaseThreadInitThunk
+0x00007ffdf832dfb8 (ntdll) RtlUserThreadStart
+)
+  ERROR: Build asset version error: assets/streamingassets/unityservicesprojectconfiguration.json in SourceAssetDB has modification time of '2023-02-18T11:28:46.5601349Z' while content on disk has modification time of '0001-01-01T00:00:00Z' with error code 2
+Stacktrace:
+0x00007ff680df368d (Unity) StackWalker::GetCurrentCallstack
+0x00007ff680dfa369 (Unity) StackWalker::ShowCallstack
+0x00007ff681d6b683 (Unity) GetStacktrace
+0x00007ff6821094d4 (Unity) GetAssetHashAndValidate
+0x00007ff682104a38 (Unity) AssetVersionBuilder::BuildHashOfSourceAssetArray
+0x00007ff682102a0d (Unity) AssetVersionBuilder::BuildAssetVersion
+0x00007ff68208a01a (Unity) CreateAssetVersionBuilder
+0x00007ff682090b13 (Unity) ImportToObjects
+0x00007ff68208f843 (Unity) ImportAsset
+0x00007ff6820b2282 (Unity) AssetImportWorker::Import
+0x00007ff682118514 (Unity) <lambda_4be6cb94f9e73352d2f8569f1da7d533>::operator()
+0x00007ff682159c82 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)>,asio::io_context::basic_executor_type<std::allocator<void>,0> >::do_complete
+0x00007ff682145b6e (Unity) asio::detail::win_iocp_io_context::do_one
+0x00007ff6821477d4 (Unity) asio::detail::win_iocp_io_context::run
+0x00007ff68215806e (Unity) IOService::Run
+0x00007ff68212ac7f (Unity) AssetImportWorkerClient::Run
+0x00007ff6820f4db3 (Unity) RunAssetImportWorkerClientV2
+0x00007ff6820f4e3b (Unity) RunAssetImporterV2
+0x00007ff681916158 (Unity) Application::InitializeProject
+0x00007ff681d75dc8 (Unity) WinMain
+0x00007ff68311533e (Unity) __scrt_common_main_seh
+0x00007ffdf6a626bd (KERNEL32) BaseThreadInitThunk
+0x00007ffdf832dfb8 (ntdll) RtlUserThreadStart
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000060 seconds.
+  path: Assets/Free Island Collection/Environment/Terrain/Textures/Dirt_1/Dirt_1_Normal.png
+  artifactKey: Guid(0ca6468d25898264ba4a05c519170642) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Island Collection/Environment/Terrain/Textures/Dirt_1/Dirt_1_Normal.png using Guid(0ca6468d25898264ba4a05c519170642) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51099e37bb30906dd93919a39cc91002') in 0.299362 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Simple Vehicle Pack/Textures/Mobile/bus_2_diffuse.tif
+  artifactKey: Guid(7d7f8880f115b9841ba7617ceec2604e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Simple Vehicle Pack/Textures/Mobile/bus_2_diffuse.tif using Guid(7d7f8880f115b9841ba7617ceec2604e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ceda40cd71cfafb8ed1ff6556402d12') in 0.049222 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000088 seconds.
+  path: Assets/Samples/Terrain Tools/0.1.0-preview/Terrain Assets/TerrainTextures/dirt_normal.tif
+  artifactKey: Guid(1ff4687a05ada474ca7eaf3010a871f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/Terrain Tools/0.1.0-preview/Terrain Assets/TerrainTextures/dirt_normal.tif using Guid(1ff4687a05ada474ca7eaf3010a871f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdb7c1375f397b667a8f8b0bde15a215') in 0.034205 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Simple Vehicle Pack/Textures/Mobile/road_diffuse.tif
+  artifactKey: Guid(e9de0ceae983cb94da0d5a0abebd6c31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Simple Vehicle Pack/Textures/Mobile/road_diffuse.tif using Guid(e9de0ceae983cb94da0d5a0abebd6c31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5f173acfba6cb469b3330e184582b3c') in 0.031601 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Simple Vehicle Pack/Textures/Mobile/bus_diffuse.tif
+  artifactKey: Guid(4cb0ad4beb219f047ab423d11568d45b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Simple Vehicle Pack/Textures/Mobile/bus_diffuse.tif using Guid(4cb0ad4beb219f047ab423d11568d45b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bac855d3434089db63e98430591ec43') in 0.039032 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Free Island Collection/Environment/Terrain/Textures/Sand/Sand_Diffuse.tif
+  artifactKey: Guid(42df4504925e3c6428d6c62cdba23147) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Island Collection/Environment/Terrain/Textures/Sand/Sand_Diffuse.tif using Guid(42df4504925e3c6428d6c62cdba23147) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6345b2be1e654bb95dfb1134bf2d2594') in 0.046100 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Free Island Collection/Environment/Terrain/Textures/Dirt_2/Dirt_2_Normal.png
+  artifactKey: Guid(10d36c98009eb3740bbcec3a9475db29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Island Collection/Environment/Terrain/Textures/Dirt_2/Dirt_2_Normal.png using Guid(10d36c98009eb3740bbcec3a9475db29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df0fd1b24528767822ab01585f2dcae4') in 0.029385 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 191.422866 seconds.
+  path: Assets/EffectExamples/WeaponEffects/Models/ShellCasing.FBX
+  artifactKey: Guid(39af8eb310699cb4dac88a1ce9577c85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/WeaponEffects/Models/ShellCasing.FBX using Guid(39af8eb310699cb4dac88a1ce9577c85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7609a335c02afeaaa110a419234ed953') in 0.081300 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/TRACKER Gastank_a.fbx
+  artifactKey: Guid(9f304573786df4c4ba508bd503a6cf35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/TRACKER Gastank_a.fbx using Guid(9f304573786df4c4ba508bd503a6cf35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd62b26e8829476a4b219df4563b7d99f') in 0.101371 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/TRACKER Rear Rim_n.fbx
+  artifactKey: Guid(91382d80124297f45bdc2ffcf0554a5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ArtisticMechanics/Brat/Meshes/Singles/In Position/TRACKER Rear Rim_n.fbx using Guid(91382d80124297f45bdc2ffcf0554a5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65b9eb8a8476a269513722e889f6c2b6') in 0.076701 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000062 seconds.
+  path: Assets/ArtisticMechanics/Brat/Meshes/Singles/000 Position/TRACKER Rear Rim 000_n.fbx
+  artifactKey: Guid(a77def5275a1ef24cb6a276ba76259f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ArtisticMechanics/Brat/Meshes/Singles/000 Position/TRACKER Rear Rim 000_n.fbx using Guid(a77def5275a1ef24cb6a276ba76259f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1323466ec731f9a296e417db3207e99e') in 0.079581 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000081 seconds.
+  path: Assets/ArtisticMechanics/Brat/Meshes/Singles/000 Position/Stand Up 000_o.fbx
+  artifactKey: Guid(50827aeb39d8fec4ba23ed44eb3ef23c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ArtisticMechanics/Brat/Meshes/Singles/000 Position/Stand Up 000_o.fbx using Guid(50827aeb39d8fec4ba23ed44eb3ef23c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06daf40605f9b92f82dab307623b0366') in 0.075293 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000071 seconds.
+  path: Assets/LowpolyStreetPack/Meshes/StreetProps.FBX
+  artifactKey: Guid(29b8da6fbd3c2b542bf7bcda4beeab81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/LowpolyStreetPack/Meshes/StreetProps.FBX using Guid(29b8da6fbd3c2b542bf7bcda4beeab81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '840e4d778ecb7e757146fdebc72ed572') in 0.976048 seconds 
+========================================================================
+Received Prepare
+Shader 'Transparent/Cutout/Complete': fallback shader 'Transparent/Cutout/BumpedSpecular' not found
+Refreshing native plugins compatible for Editor in 8.06 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 52 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 52 unused Assets / (3.1 MB). Loaded Objects now: 5230.
+Memory consumption went from 131.3 MB to 128.2 MB.
+Total: 7.154500 ms (FindLiveObjects: 0.468400 ms CreateObjectMapping: 0.283100 ms MarkObjects: 5.487700 ms  DeleteObjects: 0.913700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 22.551570 seconds.
+  path: Assets/StreamingAssets
+  artifactKey: Guid(f32c97c586aaafb4096c1892fefae2f0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/StreamingAssets using Guid(f32c97c586aaafb4096c1892fefae2f0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '00000000000000000000000000000000') in 0.008066 seconds  code(4) message(Build asset version error: assets/streamingassets.meta in SourceAssetDB has modification time of '2023-02-18T11:35:39.9999295Z' while content on disk has modification time of '0001-01-01T00:00:00Z' with error code 2
+Stacktrace:
+0x00007ff680df368d (Unity) StackWalker::GetCurrentCallstack
+0x00007ff680dfa369 (Unity) StackWalker::ShowCallstack
+0x00007ff681d6b683 (Unity) GetStacktrace
+0x00007ff6821094d4 (Unity) GetAssetHashAndValidate
+0x00007ff682104ad0 (Unity) AssetVersionBuilder::BuildHashOfSourceAssetArray
+0x00007ff682102a0d (Unity) AssetVersionBuilder::BuildAssetVersion
+0x00007ff68208a01a (Unity) CreateAssetVersionBuilder
+0x00007ff682090b13 (Unity) ImportToObjects
+0x00007ff68208f843 (Unity) ImportAsset
+0x00007ff6820b2282 (Unity) AssetImportWorker::Import
+0x00007ff682118514 (Unity) <lambda_4be6cb94f9e73352d2f8569f1da7d533>::operator()
+0x00007ff682159c82 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)>,asio::io_context::basic_executor_type<std::allocator<void>,0> >::do_complete
+0x00007ff682145b6e (Unity) asio::detail::win_iocp_io_context::do_one
+0x00007ff6821477d4 (Unity) asio::detail::win_iocp_io_context::run
+0x00007ff68215806e (Unity) IOService::Run
+0x00007ff68212ac7f (Unity) AssetImportWorkerClient::Run
+0x00007ff6820f4db3 (Unity) RunAssetImportWorkerClientV2
+0x00007ff6820f4e3b (Unity) RunAssetImporterV2
+0x00007ff681916158 (Unity) Application::InitializeProject
+0x00007ff681d75dc8 (Unity) WinMain
+0x00007ff68311533e (Unity) __scrt_common_main_seh
+0x00007ffdf6a626bd (KERNEL32) BaseThreadInitThunk
+0x00007ffdf832dfb8 (ntdll) RtlUserThreadStart
+)
+  ERROR: Build asset version error: assets/streamingassets.meta in SourceAssetDB has modification time of '2023-02-18T11:35:39.9999295Z' while content on disk has modification time of '0001-01-01T00:00:00Z' with error code 2
+Stacktrace:
+0x00007ff680df368d (Unity) StackWalker::GetCurrentCallstack
+0x00007ff680dfa369 (Unity) StackWalker::ShowCallstack
+0x00007ff681d6b683 (Unity) GetStacktrace
+0x00007ff6821094d4 (Unity) GetAssetHashAndValidate
+0x00007ff682104ad0 (Unity) AssetVersionBuilder::BuildHashOfSourceAssetArray
+0x00007ff682102a0d (Unity) AssetVersionBuilder::BuildAssetVersion
+0x00007ff68208a01a (Unity) CreateAssetVersionBuilder
+0x00007ff682090b13 (Unity) ImportToObjects
+0x00007ff68208f843 (Unity) ImportAsset
+0x00007ff6820b2282 (Unity) AssetImportWorker::Import
+0x00007ff682118514 (Unity) <lambda_4be6cb94f9e73352d2f8569f1da7d533>::operator()
+0x00007ff682159c82 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)>,asio::io_context::basic_executor_type<std::allocator<void>,0> >::do_complete
+0x00007ff682145b6e (Unity) asio::detail::win_iocp_io_context::do_one
+0x00007ff6821477d4 (Unity) asio::detail::win_iocp_io_context::run
+0x00007ff68215806e (Unity) IOService::Run
+0x00007ff68212ac7f (Unity) AssetImportWorkerClient::Run
+0x00007ff6820f4db3 (Unity) RunAssetImportWorkerClientV2
+0x00007ff6820f4e3b (Unity) RunAssetImporterV2
+0x00007ff681916158 (Unity) Application::InitializeProject
+0x00007ff681d75dc8 (Unity) WinMain
+0x00007ff68311533e (Unity) __scrt_common_main_seh
+0x00007ffdf6a626bd (KERNEL32) BaseThreadInitThunk
+0x00007ffdf832dfb8 (ntdll) RtlUserThreadStart
+
